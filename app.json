@@ -1,0 +1,17 @@
+{
+  "name": "MemoryGameApp",
+  "displayName": "MemoryGameApp",
+  "expo": {
+    "name": "MemoryGameApp",
+    "slug": "MemoryGameApp",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
