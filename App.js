@@ -1,17 +1,21 @@
 import * as React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-const instructions = Platform.select({
-  ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
-  android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`,
-});
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome to React Native!</Text>
-      <Text style={styles.instructions}>To get started, edit App.js</Text>
-      <Text style={styles.instructions}>{instructions}</Text>
+      <View style={styles.cardsView}>
+        <TouchableOpacity style={styles.card}></TouchableOpacity>
+        <TouchableOpacity style={styles.card}></TouchableOpacity>
+        <TouchableOpacity style={styles.card}></TouchableOpacity>
+        <TouchableOpacity style={styles.card}></TouchableOpacity>
+        <TouchableOpacity style={styles.card}></TouchableOpacity>
+        <TouchableOpacity style={styles.card}></TouchableOpacity>
+        <TouchableOpacity style={styles.card}></TouchableOpacity>
+        <TouchableOpacity style={styles.card}></TouchableOpacity>
+        <TouchableOpacity style={styles.card}></TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -21,16 +25,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF', 
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  cardsView:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  card: {
+   width: 80,
+   height: 120,
+   backgroundColor: '#ededed',
+   margin: 10,
+   elevation: 4,
   },
 });
