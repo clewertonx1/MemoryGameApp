@@ -7,8 +7,9 @@ export default function App() {
 
   const [update] = useState(0)
   const cards = [{},{},{},{}, {},{},{},{}, {},]
+  const [symbol, setSymbol] = useState(["a", "b", "c", "d", "e"])
   function RandomNumber(){
-    var number = Number.parseInt(Math.random() * (4))
+    var number = Number.parseInt(Math.random() * (5))
     return number
 }
 
@@ -17,7 +18,7 @@ export default function App() {
       <View style={styles.cardsView}>
         {cards.map((card, i) =>{
           return(
-            <TouchableOpacity key={i} style={styles.card}><Text>{RandomNumber()}</Text></TouchableOpacity>
+            <TouchableOpacity key={i} style={styles.card}><Text>{symbol[RandomNumber()]}</Text></TouchableOpacity>
           )
         })}
       </View>
@@ -39,6 +40,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   card: {
+  justifyContent: 'center',
+  alignItems: 'center',
    position: 'relative',
    width: 80,
    height: 120,
