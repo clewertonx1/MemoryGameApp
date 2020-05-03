@@ -3,18 +3,16 @@ import { Platform, StyleSheet, Text, View, TouchableOpacity } from 'react-native
 
 
 export default function App() {
+  const cards = [{},{},{},{}, {},{},{},{}, {},]
   return (
     <View style={styles.container}>
       <View style={styles.cardsView}>
-        <TouchableOpacity style={styles.card}></TouchableOpacity>
-        <TouchableOpacity style={styles.card}></TouchableOpacity>
-        <TouchableOpacity style={styles.card}></TouchableOpacity>
-        <TouchableOpacity style={styles.card}></TouchableOpacity>
-        <TouchableOpacity style={styles.card}></TouchableOpacity>
-        <TouchableOpacity style={styles.card}></TouchableOpacity>
-        <TouchableOpacity style={styles.card}></TouchableOpacity>
-        <TouchableOpacity style={styles.card}></TouchableOpacity>
-        <TouchableOpacity style={styles.card}></TouchableOpacity>
+        {cards.map((card, i) =>{
+          return(
+            <TouchableOpacity key={i} style={styles.card}></TouchableOpacity>
+          )
+        })}
+        
       </View>
     </View>
   );
@@ -34,10 +32,11 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   card: {
+   position: 'relative',
    width: 80,
    height: 120,
    backgroundColor: '#ededed',
    margin: 10,
-   elevation: 4,
+
   },
 });
