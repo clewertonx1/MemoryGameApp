@@ -1,18 +1,25 @@
 import * as React from 'react';
+import {useState, useEffect} from 'react'
 import { Platform, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 
 export default function App() {
+
+  const [update] = useState(0)
   const cards = [{},{},{},{}, {},{},{},{}, {},]
+  function RandomNumber(){
+    var number = Number.parseInt(Math.random() * (4))
+    return number
+}
+
   return (
     <View style={styles.container}>
       <View style={styles.cardsView}>
         {cards.map((card, i) =>{
           return(
-            <TouchableOpacity key={i} style={styles.card}></TouchableOpacity>
+            <TouchableOpacity key={i} style={styles.card}><Text>{RandomNumber()}</Text></TouchableOpacity>
           )
         })}
-        
       </View>
     </View>
   );
